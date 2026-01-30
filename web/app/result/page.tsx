@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ArrowLeft, Save, Loader2 } from "lucide-react";
 import HoroscopeGrid from "../components/HoroscopeGrid";
 import ReadingStream from "../components/ReadingStream";
+import MysticUnlock from "../components/MysticUnlock";
 import { api } from "../lib/api";
 import { createClient } from "../lib/supabase";
 
@@ -143,18 +144,7 @@ function ResultContent() {
             {/* AI Reading (Lazy Load) */}
             <div className="mt-8">
                 {!showAI ? (
-                    <div className="text-center p-8 border border-purple-500/30 rounded-lg bg-purple-900/10 backdrop-blur-sm">
-                        <h3 className="text-xl font-bold text-purple-300 mb-4">🔮 Luận Giải Chi Tiết Bởi AI</h3>
-                        <p className="text-slate-400 mb-6 text-sm">
-                            Hệ thống sẽ sử dụng AI để bình giải chi tiết về Mệnh, Thân, Tài, Quan dựa trên lá số của bạn.
-                        </p>
-                        <button
-                            onClick={() => setShowAI(true)}
-                            className="bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-purple-500/40 transition-all transform hover:-translate-y-1 animate-pulse"
-                        >
-                            ✨ Bấm Để Xem Luận Giải (AI)
-                        </button>
-                    </div>
+                    <MysticUnlock onUnlock={() => setShowAI(true)} />
                 ) : (
                     <ReadingStream dataJson={data} style={style} />
                 )}

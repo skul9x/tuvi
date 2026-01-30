@@ -10,8 +10,8 @@ class TuViLogic:
         self.solar_day = solar_day
         self.solar_month = solar_month
         self.solar_year = solar_year
-        self.hour = hour # 0-23
-        self.gender = gender # 1 = Nam, 0 = Nữ
+        self.hour = int(hour) # 0-23
+        self.gender = int(gender) # 1 = Nam, 0 = Nữ
         self.name = name
         self.reading_style = reading_style
         

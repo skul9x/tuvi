@@ -11,6 +11,7 @@ const cinzelDecorative = Cinzel_Decorative({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://tuvi-lac.vercel.app"),
     title: {
         template: "%s | Tử Vi Huyền Bí",
         default: "Tử Vi Huyền Bí - Luận Giải Vận Mệnh Bằng AI",

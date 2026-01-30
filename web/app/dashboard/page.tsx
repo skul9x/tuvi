@@ -133,7 +133,7 @@ export default function DashboardPage() {
                                     </h3>
                                     <div className="flex gap-2">
                                         <Link
-                                            href={`/result?name=${encodeURIComponent(h.name)}&day=${parseInt(h.dob_solar.split('-')[2])}&month=${parseInt(h.dob_solar.split('-')[1])}&year=${parseInt(h.dob_solar.split('-')[0])}&hour=0&gender=${h.gender}`}
+                                            href={`/result?name=${encodeURIComponent(h.name)}&day=${h.dob_solar.includes('/') ? h.dob_solar.split('/')[0] : h.dob_solar.split('-')[2]}&month=${h.dob_solar.includes('/') ? h.dob_solar.split('/')[1] : h.dob_solar.split('-')[1]}&year=${h.dob_solar.includes('/') ? h.dob_solar.split('/')[2] : h.dob_solar.split('-')[0]}&hour=0&gender=${h.gender}&style=${encodeURIComponent("Nghiêm túc")}`}
                                             className="p-2 bg-slate-800 rounded hover:bg-slate-700 text-xs"
                                         >
                                             Xem

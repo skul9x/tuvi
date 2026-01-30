@@ -106,7 +106,7 @@ export default function HoroscopeGrid({ data }: HoroscopeGridProps) {
     };
 
     return (
-        <div className="w-full max-w-5xl mx-auto shadow-2xl rounded-sm border-4 border-double border-amber-900 bg-[#fdfbf7] p-1 parchment-bg text-gray-900 font-serif">
+        <div className="w-full max-w-5xl mx-auto shadow-2xl rounded-sm border-4 border-double border-amber-900 bg-[#fdfbf7] p-1 parchment-bg text-amber-950 font-serif">
             <div className="grid gap-0 w-full aspect-square md:aspect-[4/3] min-h-[600px]"
                 style={{
                     gridTemplateColumns: "1fr 1fr 1fr 1fr",
@@ -134,7 +134,7 @@ export default function HoroscopeGrid({ data }: HoroscopeGridProps) {
                     <h1 className="text-2xl md:text-4xl font-bold text-red-800 uppercase mb-2 drop-shadow-sm tracking-wider">
                         {data.info.name}
                     </h1>
-                    <div className="space-y-1 text-sm md:text-base font-medium text-slate-800">
+                    <div className="space-y-1 text-sm md:text-base font-medium text-amber-950">
                         <p>Dương Lịch: {data.info.solar_date} - {data.info.time}</p>
                         <p>Âm Lịch: {data.info.lunar_date}</p>
                         <p>Bát Tự: {data.info.can_chi}</p>
@@ -145,6 +145,7 @@ export default function HoroscopeGrid({ data }: HoroscopeGridProps) {
                             Cục: {data.info.cuc}
                         </p>
                         <p>Chủ Mệnh: {data.info.chu_menh} • Chủ Thân: {data.info.chu_than}</p>
+                        <p className="font-bold text-amber-900 mt-1">Giới tính: {data.info.gender}</p>
                     </div>
                     <div className="mt-6">
                         <img src="/yin-yang.png" alt="Yin Yang" className="w-12 h-12 opacity-20 animate-spin-slow" onError={(e) => e.currentTarget.style.display = 'none'} />
