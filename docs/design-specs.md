@@ -1,45 +1,44 @@
-# Design Specifications: AI Tu Vi (Light/Traditional)
+# Design Specifications: Mystical Luxury (Tu Vi Huyen Bi)
 
-## 🎨 Color Palette (Warm/Paper)
-| Name | Hex | Usage |
-|------|-----|-------|
-| **Background** | `#fdfbf7` | App background (Cream/Paper) |
-| **Panel BG** | `#faebd7` | Input Panel Background (AntiqueWhite) or Lighter `#fff8f0` |
-| **Surface** | `#ffffff` | Cards/Cells background (White) |
-| **Primary** | `#f59e0b` | Main Buttons (Orange/Amber) |
-| **Text Primary** | `#333333` | Main content text |
-| **Text Red** | `#d32f2f` | Bad stars / Elements (Hỏa) |
-| **Text Green** | `#2e7d32` | Good stars / Elements (Mộc) |
-| **Text Blue** | `#1976d2` | Elements (Thủy) |
-| **Text Yellow** | `#fbc02d` | Elements (Thổ/Kim - Darker for readability) |
-| **Border** | `#e0e0e0` | Dividers |
+## 🎨 Creative Direction
+- **Vibe**: "Cosmic Wisdom meets Digital Luxury". A balance between ancient mystery (astrology charts, stars) and modern digital product design (clean inputs, fast interactions).
+- **Metaphor**: The screen is a portal to the stars.
 
-## 🖼️ Layout Structure (Traditional Grid)
-### Right Panel: Lá Số View
-Uses a **4x4 Grid Layout** to mimic the traditional square chart.
-
-| Tỵ | Ngọ | Mùi | Thân |
-|----|-----|-----|------|
-| Thìn| **Center** | **Center** | Dậu |
-| Mão | **Center** | **Center** | Tuất |
-| Dần | Sửu | Tý | Hợi |
-
-- **Center (2x2 merged):** Displays User Info (Name, Date, Year, An Quang/Thai Tue info).
-- **12 Cells:** Each cell displays:
-    - **Header:** Cung Name (e.g., Mệnh/Phụ Mẫu) + Dia Chi (Tý/Sửu).
-    - **Body:** List of Stars (Chinh Tinh in Bold/Uppper, Phu Tinh smaller).
-    - **Footer:** Truong Sinh, Vong Thai Tue (if applicable).
-
-### Left Panel: Input Form
-- Background: Light Beige/Gradient.
-- Style: Clean, rounded "Pill" inputs (border-radius: 20px).
-- Button: Large, Orange, Rounded, Shadowed.
+## 🎨 Color Palette
+| Role | Name | Tailwind Class | Hex Code | Usage |
+|------|------|----------------|----------|-------|
+| **Background** | `void` | `bg-slate-950` | `#020617` | Main app background (Deepest space) |
+| **Surface** | `nebula` | `bg-slate-900/50` | `#0f172a` | Cards, Glassmorphism base |
+| **Primary** | `gold` | `text-amber-400` | `#fbbf24` | Headings, Icons, Borders (Gradient start) |
+| **Primary Alt** | `gold-light` | `text-amber-200` | `#fde68a` | Gradient end, subtle highlights |
+| **Accent** | `mystic` | `bg-violet-600` | `#7c3aed` | Primary Actions (Buttons) |
+| **Accent Glow**| `mystic-glow` | `shadow-violet-500/50` | -- | Button Shadows |
+| **Text Main** | `starlight` | `text-slate-50` | `#f8fafc` | Primary Content |
+| **Text Muted** | `star-dust` | `text-slate-400` | `#94a3b8` | Labels, Explanations |
 
 ## 📝 Typography
-- **Font:** `Roboto` or `Segoe UI`.
-- **Cung Header:** Bold, Uppercase, 11-12px.
-- **Star Text:** 10px or 11px. Main stars Bold.
+| Element | Font Family | Size (Desktop/Mobile) | Weight | Tracking |
+|---------|-------------|-----------------------|--------|----------|
+| **Headings** | `Cinzel` / `Playfair Display` | 4xl / 3xl | Bold | Wide (`tracking-wider`) |
+| **Subheads** | `Cinzel Decorative` | 2xl / xl | Semibold | Normal |
+| **Body** | `Inter` / `Outfit` | base / sm | Regular | Normal |
+| **Data/Nums** | `JetBrains Mono` | sm / xs | Medium | Tight |
 
-## 🔲 Qt Stylesheet Logic
-- Use `QFrame` for cells with `background-color: white; border: 1px solid #ddd;`.
-- Input fields: `border: 1px solid #ccc; border-radius: 15px; padding: 5px 10px;`.
+## 🌫️ Effects & Materials
+- **Glassmorphism**: `bg-slate-900/40 backdrop-blur-xl border border-white/10`
+- **Golden Border**: `border-amber-500/30`
+- **Cosmic Gradient (Button)**: `bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-500 hover:to-indigo-500`
+- **Text Gradient (Gold)**: `bg-clip-text text-transparent bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200`
+
+## 📱 Responsive Strategy (Mobile First)
+- **Mobile**: Single column, fixed bottom action bar for "Xem Ngay", large touch targets (48px+).
+- **Desktop**: Split layout (Left: Data Input, Right: Visualization/Explanation), expansive background art.
+
+## ✨ Animations
+- **Fade In**: `animate-fade-in-up` (for cards appearing)
+- **Pulse**: `animate-pulse-slow` (for stars in background)
+- **Shimmer**: `animate-shimmer` (on gold borders)
+
+## 🖼️ Assets Needed
+- Background: `stars-bg.png` (Seamless tile or CSS generated stars)
+- Icons: `Lucide React` (Thin stroke) or `Heroicons`

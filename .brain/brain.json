@@ -1,0 +1,52 @@
+{
+    "meta": {
+        "schema_version": "1.1.0",
+        "awf_version": "3.3.0"
+    },
+    "project": {
+        "name": "Tu Vi Huyen Bi",
+        "type": "Web Application",
+        "status": "Production Ready"
+    },
+    "tech_stack": {
+        "frontend": {
+            "framework": "Next.js 16 (App Router)",
+            "styling": "Tailwind CSS v4",
+            "language": "TypeScript",
+            "bundler": "Turbopack"
+        },
+        "backend": {
+            "framework": "Next.js API Routes / Python (Potential Integration - TBD)"
+        },
+        "database": {
+            "type": "TBD"
+        }
+    },
+    "features": [
+        {
+            "name": "Mystical UI",
+            "description": "Premium luxury interface with glassmorphism and gold accents.",
+            "status": "Implemented"
+        },
+        {
+            "name": "Horoscope Calculation",
+            "description": "Generates horoscope based on birth date/time (Currently Mock/Basic).",
+            "status": "Basic Implementation"
+        },
+        {
+            "name": "Privacy Policy",
+            "description": "Legal requirement compliance page.",
+            "status": "Implemented"
+        }
+    ],
+    "knowledge_items": {
+        "patterns": [
+            "Split Layout for Landing Page",
+            "CSS Variables for Theme configuration (Globals.css via @theme)",
+            "Tailwind Utility Classes for styling"
+        ],
+        "gotchas": [
+            "Next.js Turbopack + Tailwind v4 config conflict: Solved by moving config to CSS variables in globals.css and removing tailwind.config.js"
+        ]
+    }
+}
