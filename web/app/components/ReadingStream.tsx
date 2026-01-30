@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useState, useRef } from "react";
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ReadingStreamProps {
     dataJson: any;
@@ -88,8 +90,10 @@ export default function ReadingStream({ dataJson, style }: ReadingStreamProps) {
                 💎 Luận Giải AI ({style})
             </h3>
 
-            <div className="prose dark:prose-invert max-w-none text-sm leading-relaxed whitespace-pre-wrap">
-                {content}
+            <div className="prose dark:prose-invert max-w-none text-sm leading-relaxed text-gray-800 dark:text-gray-200">
+                <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    {content}
+                </ReactMarkdown>
             </div>
 
             {isLoading && (

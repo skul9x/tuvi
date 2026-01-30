@@ -174,7 +174,11 @@ class GeminiClient:
         """
         
         for i in range(12):
-            c = cung[i]
+            # Fix: JSON converts integer keys to strings.
+            # Try int key first, then string key.
+            c = cung.get(i) or cung.get(str(i))
+            if not c: continue
+
             prompt += f"- Cung {c['name']} ({c.get('chuc_nang', '')}): {', '.join(c['chinh_tinh'])}\n"
 
         prompt += """

@@ -6,7 +6,8 @@
     "project": {
         "name": "Tu Vi Huyen Bi",
         "type": "Web Application",
-        "status": "Production Ready"
+        "status": "Live Production",
+        "url": "https://tuvi-lac.vercel.app"
     },
     "tech_stack": {
         "frontend": {
@@ -16,10 +17,14 @@
             "bundler": "Turbopack"
         },
         "backend": {
-            "framework": "Next.js API Routes / Python (Potential Integration - TBD)"
+            "framework": "Python Serverless Functions (Vercel)",
+            "key_libraries": [
+                "google-generativeai",
+                "lunardate"
+            ]
         },
         "database": {
-            "type": "TBD"
+            "type": "Stateless (In-Memory Processing)"
         }
     },
     "features": [
@@ -30,23 +35,25 @@
         },
         {
             "name": "Horoscope Calculation",
-            "description": "Generates horoscope based on birth date/time (Currently Mock/Basic).",
-            "status": "Basic Implementation"
+            "description": "Generates horoscope based on birth date/time via Python backend.",
+            "status": "Implemented"
         },
         {
-            "name": "Privacy Policy",
-            "description": "Legal requirement compliance page.",
+            "name": "AI Reading",
+            "description": "Streamed interpretation via Google Gemini AI.",
             "status": "Implemented"
         }
     ],
     "knowledge_items": {
         "patterns": [
             "Split Layout for Landing Page",
-            "CSS Variables for Theme configuration (Globals.css via @theme)",
-            "Tailwind Utility Classes for styling"
+            "CSS Variables for Theme configuration",
+            "Python-Next.js Hybrid Routing on Vercel"
         ],
         "gotchas": [
-            "Next.js Turbopack + Tailwind v4 config conflict: Solved by moving config to CSS variables in globals.css and removing tailwind.config.js"
+            "Do NOT use GUI libs (PySide6) in Serverless environment - causes 500 crash.",
+            "Python Dicts with integer keys are serialized to JSON as { '1': ... }, causing KeyErrors if accessed as int in Python client re-ingestion.",
+            "Frontend must handle Python Lists vs Dicts carefully (Object.values vs Array.map)."
         ]
     }
 }
